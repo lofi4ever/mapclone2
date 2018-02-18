@@ -1,0 +1,38 @@
+g[data-pointer-country]:hover {
+  cursor: pointer;
+  fill: #0079C1;
+  stroke: #CDE2F0;
+  stroke-width: 1;
+  cursor: pointer;
+}
+.tooltipster-base {
+  position: absolute;
+  z-index: 3000;
+  border: 1px solid #111;
+  background-color: #eee;
+  padding: 5px;
+  opacity: 0.85;
+}
+g path {
+  transition: .2s ease;
+}
+.tooltip-img {
+  float: left;
+  margin-left: -3px;
+  margin-top: -9px;
+  width: 34px;
+}
+.tooltipster-base {
+  border: none;
+  background-color: transparent;
+  width: auto!important;
+}
+.tooltipster-content {
+  white-space: nowrap;
+  color: #2d2d2d;
+  font-size: 12px;
+  background-color: #f1f4f7;
+  padding-right: 12px;
+  padding-top: 1px;
+  padding-bottom: 2px;
+}
