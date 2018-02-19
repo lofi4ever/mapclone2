@@ -212,6 +212,47 @@ $( function(){
                 content: '<img src="img/flags_for_map/'+ countryId +'.png" class="tooltip-img"></img>' + parentTitle,
             });
         });
+
+        var thumbNum = $('.map-slider .slide').length;
+        var paginationPosition = 0
+        var sliderContainerWidth;
+        var thumbWidth;
+        var spaceToMove;
+        var itemsPerPage = 8;
+        mapSlider();
+
+        function mapSlider() {
+          sliderWrapperWidth = parseInt($('.map-slider-wrapper').width(), 10);
+          sliderContainerWidth = parseInt($('.map-slider').width(), 10);
+          thumbWidth = (sliderWrapperWidth/itemsPerPage) + 'px';
+          spaceToMove = (sliderWrapperWidth/itemsPerPage) + 'px';
+          $('.map-slider').css('width', (sliderWrapperWidth/itemsPerPage) * thumbNum + 'px');
+          $('.map-slider .slide').css('width', thumbWidth);
+          $('#map-slider-right').on('click', function() {
+            console.log(paginationPosition, thumbNum);
+            if(paginationPosition!=thumbNum-itemsPerPage) {
+              $('#map-slider-left').removeClass('control-disabled');
+              $('.map-slider').animate({
+                marginLeft: '-='+spaceToMove,
+              });
+              paginationPosition++;
+            } else {
+              $('#map-slider-right').addClass('control-disabled');
+            }   
+          });
+          $('#map-slider-left').on('click', function() {
+            $('#map-slider-right').removeClass('control-disabled');
+            if(paginationPosition!=0) {
+              $('.map-slider').animate({
+                marginLeft: '+='+spaceToMove,
+              });
+              paginationPosition--;
+            }  else {
+              $('#map-slider-left').addClass('control-disabled');
+            }
+          });
+        }
+
        }, 1000);
 
       console.log(countriesArray);

@@ -36,3 +36,35 @@ g path {
   padding-top: 1px;
   padding-bottom: 2px;
 }
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.map-slider-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+.map-slider .slide {
+  float: left;
+}
+#map-slider-left {
+  position: absolute;
+  top: 20px;
+  left: 0;
+}
+#map-slider-right {
+  position: absolute;
+  top: 20px;
+  right: 0;
+}
+.control-disabled {
+  display: none;
+}
+.map-slider-controls {
+  position: relative;
+  bottom: 74px;
+  width: 100%;
+}
